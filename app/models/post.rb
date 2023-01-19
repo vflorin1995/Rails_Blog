@@ -7,8 +7,8 @@ class Post < ApplicationRecord
   validates :Title, length: {maximum: 250}
   validates :CommentsCounter, numericality: {greater_than_or_equal_to: 0}
   validates :CommentsCounter, numericality: {only_integer: true}
-  validates :PostsCounter, numericality: {greater_than_or_equal_to: 0}
-  validates :PostsCounter, numericality: {only_integer: true}
+  validates :LikesCounter, numericality: {greater_than_or_equal_to: 0}
+  validates :LikesCounter, numericality: {only_integer: true}
 
   after_save :update_post_count_for_user
 
