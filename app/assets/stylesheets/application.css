@@ -35,6 +35,9 @@ img {
   text-align: end;
 }
 
-button {
-  margin: 10px auto;
+.button {
+  margin-top: 50px;
+  background-color: beige;
+  padding: 10px 20px;
+  border: black solid 2px;
 }

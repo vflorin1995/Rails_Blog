@@ -8,7 +8,7 @@
 <div>
 <% @posts.each do |post| %>
     <div class="mt-2">
-        <div><strong> <%= post.Title %> </strong></div>
+        <%= link_to post.Title, "/users/#{@user.id}/posts/#{post.id}" %>
         <div> <%= post.Text %> </div>
         <div class="align-left"> Comments: <%= post.CommentsCounter %>  Likes: <%= post.LikesCounter %> </div>
         <div>
