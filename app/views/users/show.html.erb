@@ -1,1 +1,21 @@
-<div>This is a single user</div>
+<div class="flex mt-2">
+        <img src=<%= @user.Photo %> >
+        <div class="flex justify-between flex1">
+            <div class="user"><%= @user.Name %></div>
+            <div class="number">Number of posts: <%= @user.PostsCounter %></div>
+        </div>
+</div>
+<div class="mt-2">
+    <div>Bio</div>
+    <div><%= @user.Bio%></div>
+</div>
+<div>
+<% @posts.each do |post| %>
+    <div class="mt-2">
+        <div><strong> <%= post.Title %> </strong></div>
+        <div> <%= post.Text %> </div>
+        <div class="align-left"> Comments: <%= post.CommentsCounter %>  Likes: <%= post.LikesCounter %> </div>
+    </div>
+<% end %>
+</div>
+<button>View all posts</button>
