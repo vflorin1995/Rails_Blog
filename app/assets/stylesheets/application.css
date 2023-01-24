@@ -1,40 +1,40 @@
 img {
-    width: 100px;
+  width: 100px;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .grid {
-    display:grid;
-    grid-template-columns: 1fr auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 .user {
-    margin:auto 10px;
+  margin: auto 10px;
 }
 
 .number {
-    margin: auto 10px 10px auto;
+  margin: auto 10px 10px auto;
 }
 
 .flex1 {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .justify-between{
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .mt-2 {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 .align-left {
-    text-align: end;
+  text-align: end;
 }
 
 button {
-    margin: 10px auto;
+  margin: 10px auto;
 }
