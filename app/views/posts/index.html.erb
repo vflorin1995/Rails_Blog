@@ -12,8 +12,7 @@
         <div> <%= post.Text %> </div>
         <div class="align-left"> Comments: <%= post.CommentsCounter %>  Likes: <%= post.LikesCounter %> </div>
         <div>
-            <%comments = Comment.where(post_id: post.id) %>
-            <% comments.each do |comment| %>
+            <% post.last_5_comments.each do |comment| %>
               <div> <% user = User.find_by(id: comment.user_id).Name %> </div>
               <div> <%= user %>:  <%= comment.Text %> </div>
             <% end %>
