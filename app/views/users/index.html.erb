@@ -1,1 +1,9 @@
-<div>This is a list of all users</div>
+<% @users.each do |user| %>
+    <div class="flex mt-2">
+        <img src=<%= user.Photo %> >
+        <div class="flex justify-between flex1">
+            <%= link_to user.Name, "/users/#{user.id}", class: "user" %>
+            <div class="number">Number of posts: <%= user.PostsCounter %></div>
+        </div>
+    </div>
+<% end %>
