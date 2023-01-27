@@ -24,8 +24,8 @@
   <h1>Add a new post</h1>
 
   <%= form_with model: @post, url: user_posts_path(:user_id) do |form| %> 
-      <%= form.text_field :title %>
-      <%= form.text_area :text %>
+      <%= form.text_field :title , placeholder: "Title"%>
+      <%= form.text_field :text , placeholder: "Text"%>
       <%= form.submit %>
   <% end %>
 </section>

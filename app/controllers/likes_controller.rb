@@ -7,5 +7,7 @@ class LikesController < ApplicationController
     )
 
     return unless @like.save
+
+    redirect_to user_posts_path
   end
 end
