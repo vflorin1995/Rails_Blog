@@ -10,7 +10,7 @@
     <div><%= @user.Bio%></div>
 </div>
 <div>
-<% @posts.each do |post| %>
+<% @user.last_3_posts.each do |post| %>
     <div class="mt-2">
         <div><strong> <%= post.Title %> </strong></div>
         <div> <%= post.Text %> </div>
@@ -19,3 +19,13 @@
 <% end %>
 </div>
 <%= link_to "View all posts", "/users/#{@user.id}/posts", class: "button" %>
+
+<section>
+  <h1>Add a new post</h1>
+
+  <%= form_with model: @post, url: user_posts_path(:user_id) do |form| %> 
+      <%= form.text_field :title , placeholder: "Title"%>
+      <%= form.text_field :text , placeholder: "Text"%>
+      <%= form.submit %>
+  <% end %>
+</section>
