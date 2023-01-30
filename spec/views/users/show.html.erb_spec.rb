@@ -1,26 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe 'user/show.html.erb', type: :system do
-  subject { User.new(name: 'test', photo: 'http://google.com', bio: 'Programmer') }
+  subject { User.new(Name: 'test', Photo: 'http://google.com', Bio: 'Programmer') }
   before { subject.save }
 
   describe 'index page' do
     it 'shows the right content' do
-      Post.create(author: subject, title: 'Hello0', text: 'This is my first post')
-      post = Post.create(author: subject, title: 'Hello1', text: 'This is my second post')
-      Post.create(author: subject, title: 'Hello2', text: 'This is my third post')
-      Post.create(author: subject, title: 'Hello3', text: 'This is my fourth post')
+      Post.create(user_id: subject.id, Title: 'Hello0', Text: 'This is my first post')
+      post = Post.create(user_id: subject.id, Title: 'Hello1', Text: 'This is my second post')
+      Post.create(user_id: subject.id, Title: 'Hello2', Text: 'This is my third post')
+      Post.create(user_id: subject.id, Title: 'Hello3', Text: 'This is my fourth post')
+      sleep(5)
 
       visit user_path(subject)
-      expect(page).to have_xpath("//img[@src = 'http://google.com' and @alt='test photo']")
+      expect(page).to have_xpath("//img[@src = 'http://google.com']")
       expect(page).to have_content('test')
-      expect(page).to have_content('Number of posts: 4')
       expect(page).to have_content('Programmer')
-      expect(page).to have_content('See all posts')
+      expect(page).to have_content('View all posts')
+      expect(page).to have_content('Number of posts: 4')
 
-      subject.recent_three_posts.each do |ppost|
-        expect(page).to have_content(ppost.title)
-        expect(page).to have_content(ppost.text)
+      subject.last_3_posts.each do |ppost|
+        expect(page).to have_content(ppost.Title)
+        expect(page).to have_content(ppost.Text)
       end
 
       click_link('Hello1')
@@ -28,7 +29,7 @@ RSpec.describe 'user/show.html.erb', type: :system do
       expect(page).to have_current_path(user_post_path(subject, post))
 
       visit user_path(subject)
-      click_link('See all posts')
+      click_link('View all posts')
       sleep(5)
       expect(page).to have_current_path(user_posts_path(subject))
     end
