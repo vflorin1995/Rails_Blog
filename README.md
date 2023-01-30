@@ -36,7 +36,7 @@
 ## 💻 Getting Started <a name="getting-started"></a>
 
 ### Prerequisites
-- IDE(code editor) like: **Vscode**, **Sublime**, ...etc. 
+- IDE(code editor) like: **Vscode**, **Sublime**, ...etc.
 - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
 
 ### Setup
@@ -64,6 +64,12 @@ bundle install
 
 - GitHub: [@vflorin1995](https://github.com/vflorin1995)
 - LinkedIn: [@florin--voicu](https://linkedin.com/in/florin--voicu)
+
+👤 **Adel Guitoun**
+
+- GitHub: [@adel-gu](https://github.com/adel-gu)
+- Twitter: [@GuitounAdel](https://twitter.com/GuitounAdel)
+- LinkedIn: [adelguitoun](https://linkedin.com/in/adelguitoun)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
