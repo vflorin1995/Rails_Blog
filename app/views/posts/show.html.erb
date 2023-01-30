@@ -5,9 +5,8 @@
     </div>
     <div class="mt-2"> <%= @post.Text %> </div>
     <div class="mt-2">
-        <%comments = Comment.where(post_id: @post.id) %>
-        <% comments.each do |comment| %>
-          <div> <% user = User.find_by(id: comment.user_id).Name %> </div>
+        <% @post.comments.each do |comment| %>
+          <div> <% user = comment.user.Name %> </div>
           <div> <%= user %>:  <%= comment.Text %> </div>
         <% end %>
     </div>
