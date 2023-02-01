@@ -41,3 +41,17 @@ img {
   padding: 10px 20px;
   border: black solid 2px;
 }
+
+.form {
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.field {
+  display: flex;
+  margin: 20px 0;
+}
+
+.butonn {
+  width: 265px;
+}
