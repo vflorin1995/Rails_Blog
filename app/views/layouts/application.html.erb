@@ -12,7 +12,9 @@
 
   <body>
     <%= yield %>
-    <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data: {turbo: false}%>
+    <% if(user_signed_in?) %>
+      <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data: {turbo: false}%>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </body>

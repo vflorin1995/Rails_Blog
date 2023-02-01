@@ -1,35 +1,31 @@
+<div class="form"> 
+
 <h2>Sign up</h2>
-<h1>H1</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :Name %><br />
-    <%= f.text_field :Name %>
+    <%= f.text_field :Name, size: 30, placeholder: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, size: 30, autofocus: true, autocomplete: "email", placeholder: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, size: 30, autocomplete: "new-password", placeholder: "password - #{@minimum_password_length} characters minimum" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, size: 30, autocomplete: "new-password", placeholder: "repeat password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", :class => 'butonn' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
